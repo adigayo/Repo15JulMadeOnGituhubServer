@@ -1,0 +1,38 @@
+Tambahan ##########
+Error Message "fatal remote origin already exists"
+-------- Solution --------------------------------------
+You are getting this error because "origin" is not available. "origin" is a convention not part of the command. "origin" is the local name of the remote repository.
+
+For example you could also write:
+
+git remote add myorigin git@github.com:myname/oldrep.git  
+git remote add testtest git@github.com:myname/oldrep.git
+
+See the manual:
+
+http://www.kernel.org/pub/software/scm/git/docs/git-remote.html
+
+To remove a remote repository you enter:
+
+git remote rm origin
+
+Again "origin" is the name of the remote repository if you want to remove the "experimental" branch on the remote.
+
+git remote rm experimental
+
+share|improve this answer
+	
+edited Feb 26 '12 at 13:47
+Ninefingers
+18.7k453102
+	
+answered Aug 3 '09 at 11:41
+MrHus
+9,69551625
+	
+   	 
+	
+"git remote rm origin" didn't work from me, if it doesn't work for you try to check with "git remote -v" this will show you if your origin has a url set, if it doesn't likely you did the init locally and are trying to push it remote, and made a misstep like me). Then follow RobinH's answer: git remote set-url origin git@github.com:username/projectname.git –  Clarence Liu May 23 at 1:46
+1 	 
+	
+check this answer in order to force the url. –  srodriguex Jun 5 at 21:32 
